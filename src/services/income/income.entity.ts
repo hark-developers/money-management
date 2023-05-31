@@ -8,7 +8,7 @@ class Income {
     @PrimaryGeneratedColumn()
     public id: number;
 
-    @OneToMany(() => IncomeType, (incomeType: IncomeType) => incomeType.income)
+    @ManyToOne(() => IncomeType, (incomeType: IncomeType) => incomeType.income)
     public type: string;
 
     @Column({
@@ -21,9 +21,9 @@ class Income {
     public user: number | User
 
     @Column({
-        type: "timestamptz",
+        type: "numeric",
     })
-    public creditDate: Date;
+    public creditDay: number;
 
     @Column({
         type: "enum",

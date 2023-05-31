@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import Income from "./income.entity";
 
 @Entity("incomeType")
@@ -13,7 +13,7 @@ class IncomeType {
     })
     public name: string
 
-    @ManyToOne(() => Income, (income: Income) => income.type)
+    @OneToMany(() => Income, (income: Income) => income.type)
     public income: number | Income
 
 }
