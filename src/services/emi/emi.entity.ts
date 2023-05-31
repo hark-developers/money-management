@@ -23,9 +23,9 @@ class Emi {
     public user: number | User
 
     @Column({
-        type: "timestamptz",
+        type: "numeric",
     })
-    public dueDate: Date;
+    public dueDay: number;
 
     @Column({
         type: "timestamptz",
