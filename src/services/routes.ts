@@ -3,6 +3,7 @@ import authRoute from './auth/auth.routes';
 import creditCardRoute from './creditCard/creditCard.routes';
 import emiRoute from './emi/emi.routes';
 import incomeRoute from './income/income.routes';
+import moneyBucketRoute from './moneyBucket/moneyBucket.routes';
 import pingRoute from './ping/ping.routes';
 import postPayRoute from './postPay/postPay.routes';
 import savingTargetRoute from './savingTarget/savingTarget.routes';
@@ -17,6 +18,7 @@ const allRoutes: Route[] = [
     ...creditCardRoute,
     ...postPayRoute,
     ...savingTargetRoute,
+    ...moneyBucketRoute,
 ]
 
 export default allRoutes;
