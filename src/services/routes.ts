@@ -1,5 +1,6 @@
 import { Route } from '../types/route';
 import authRoute from './auth/auth.routes';
+import creditCardRoute from './creditCard/creditCard.routes';
 import emiRoute from './emi/emi.routes';
 import incomeRoute from './income/income.routes';
 import pingRoute from './ping/ping.routes';
@@ -11,6 +12,7 @@ const allRoutes: Route[] = [
     ...authRoute,
     ...incomeRoute,
     ...emiRoute,
+    ...creditCardRoute,
 ]
 
 export default allRoutes;

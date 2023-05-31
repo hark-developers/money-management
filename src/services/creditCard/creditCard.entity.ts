@@ -23,9 +23,9 @@ class CreditCard {
     public user: number | User
 
     @Column({
-        type: "timestamptz",
+        type: "numeric",
     })
-    public statementDate: Date;
+    public statementDate: number;
 
     @Column({
         type: "enum",
