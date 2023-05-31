@@ -4,6 +4,7 @@ import creditCardRoute from './creditCard/creditCard.routes';
 import emiRoute from './emi/emi.routes';
 import incomeRoute from './income/income.routes';
 import pingRoute from './ping/ping.routes';
+import postPayRoute from './postPay/postPay.routes';
 import userRoute from './users/users.routes';
 
 const allRoutes: Route[] = [
@@ -13,6 +14,7 @@ const allRoutes: Route[] = [
     ...incomeRoute,
     ...emiRoute,
     ...creditCardRoute,
+    ...postPayRoute,
 ]
 
 export default allRoutes;
