@@ -1,11 +1,11 @@
 import dotenv from 'dotenv';
-import { ConnectionOptions } from 'typeorm';
+import { DataSourceOptions } from 'typeorm';
 
 dotenv.config();
 
 const node_env = process.env.NODE_ENV;
 
-const defaultPGConfig: ConnectionOptions = {
+const defaultPGConfig: DataSourceOptions = {
    "type": "postgres",
    "name": "default" as string,
    "host": (node_env === 'production') ? process.env.PG_HOST_PRODUCTION : process.env.PG_HOST_DEVELOPMENT as string,

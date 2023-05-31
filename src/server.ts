@@ -12,12 +12,14 @@ const app = express();
 
 initDatabase(dbConfig).then((connection) => {
 
+    app.locals.connection = connection
+
     // initializing all middlewares
     initMiddlewares(middlewares, app);
 
     // initializing all routes
     initRoutes(allRoutes, app)
-    
+
     // initialing errors handlers
     initMiddlewares(errorHandlers, app);
 
