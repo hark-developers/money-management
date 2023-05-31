@@ -1,4 +1,10 @@
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, DeleteDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import Income from "../income/income.entity";
+import Emi from "../emi/emi.entity";
+import CreditCard from "../creditCard/creditCard.entity";
+import PostPay from "../postPay/postPay.entity";
+import SavingTarget from "../savingTarget/savingTarget.entity";
+import MoneyBucket from "../moneyBucket/moneyBucket.entity";
 
 @Entity("users")
 class User {
@@ -84,6 +90,24 @@ class User {
         nullable: true
     })
     public deleted_on: Date
+
+    @OneToMany(() => Income, (income: Income) => income.user)
+    public income: number | Income
+
+    @OneToMany(() => Emi, (emi: Emi) => emi.user)
+    public emi: number | Emi
+
+    @OneToMany(() => CreditCard, (creditCards: CreditCard) => creditCards.user)
+    public creditCards: number | CreditCard
+
+    @OneToMany(() => PostPay, (postPay: PostPay) => postPay.user)
+    public postPay: number | PostPay
+
+    @OneToMany(() => SavingTarget, (savingTarget: SavingTarget) => savingTarget.user)
+    public savingTarget: number | SavingTarget
+
+    @OneToMany(() => MoneyBucket, (moneyBucket: MoneyBucket) => moneyBucket.user)
+    public moneyBucket: number | MoneyBucket
 
 }
 
